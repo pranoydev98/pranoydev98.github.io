@@ -233,13 +233,13 @@
         }
 
         /* Education Section */
-        .education-timeline {
+        .education-timeline, .experience-timeline {
             position: relative;
             max-width: 900px;
             margin: 3rem auto;
         }
 
-        .education-timeline::before {
+        .education-timeline::before, .experience-timeline::before {
             content: '';
             position: absolute;
             top: 0;
@@ -250,12 +250,12 @@
             transform: translateX(-50%);
         }
 
-        .education-item {
+        .education-item, .experience-item {
             margin: 3rem 0;
             position: relative;
         }
 
-        .education-card {
+        .education-card, .experience-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -266,22 +266,22 @@
             transition: all 0.3s ease;
         }
 
-        .education-card:hover {
+        .education-card:hover, .experience-card:hover {
             transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.1);
         }
 
-        .education-item:nth-child(odd) .education-card {
+        .education-item:nth-child(odd) .education-card, .experience-item:nth-child(odd) .experience-card {
             margin-left: auto;
             margin-right: 5%;
         }
 
-        .education-item:nth-child(even) .education-card {
+        .education-item:nth-child(even) .education-card, .experience-item:nth-child(even) .experience-card {
             margin-left: 5%;
             margin-right: auto;
         }
 
-        .education-timeline-dot {
+        .education-timeline-dot, .experience-timeline-dot {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -294,30 +294,30 @@
             z-index: 10;
         }
 
-        .education-degree {
+        .education-degree, .experience-role {
             font-size: 1.4rem;
             font-weight: 700;
             color: #00d4ff;
             margin-bottom: 0.5rem;
         }
 
-        .education-school {
+        .education-school, .experience-company {
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
             color: #ffffff;
         }
 
-        .education-duration {
+        .education-duration, .experience-duration {
             font-size: 1rem;
-            color:  #ffffff;
+            color: #ffffff;
             margin-bottom: 1rem;
             font-weight: 500;
         }
 
         .education-gpa {
             font-size: 1rem;
-            color:  #ffffff;
+            color: #ffffff;
             margin-bottom: 1rem;
             font-weight: 600;
         }
@@ -336,6 +336,33 @@
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.5;
             font-size: 0.9rem;
+        }
+
+        /* Experience Section Specific Styles */
+        .experience-description {
+            margin-top: 1rem;
+        }
+
+        .experience-description ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience-description li {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .experience-description li::before {
+            content: '▸';
+            color: #00d4ff;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
         }
 
         /* Skills Section */
@@ -399,6 +426,8 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card::before {
@@ -437,6 +466,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
+            margin-top: auto;
         }
 
         .tech-tag {
@@ -510,17 +540,17 @@
                 grid-template-columns: 1fr;
             }
 
-            .education-timeline::before {
+            .education-timeline::before, .experience-timeline::before {
                 left: 30px;
             }
 
-            .education-card {
+            .education-card, .experience-card {
                 width: calc(100% - 80px);
                 margin-left: 60px !important;
                 margin-right: 0 !important;
             }
 
-            .education-timeline-dot {
+            .education-timeline-dot, .experience-timeline-dot {
                 left: 30px;
             }
         }
@@ -545,6 +575,7 @@
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -614,6 +645,64 @@
         </div>
     </section>
 
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Work Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item animate-on-scroll">
+                    <div class="experience-card">
+                        <div class="experience-role">Senior Software Engineer</div>
+                        <div class="experience-company">Schneider Electric</div>
+                        <div class="experience-duration">Aug 2020 - July 2023</div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Developed a comprehensive HR and onboarding web app that serves as centralized solution for over 100k end users, including features like live ticket status tracking system, push notifications and data dashboards using React.js, Node.js and MongoDB.</li>
+                                <li>Achieved 15% reduction in application support hours by engineering integration based automation solutions, API calls (Active Directory, ARM, JDBC SQL Servers) and backend event handlers to enhance the end user and vendor IT portal using Ruby and SQL.</li>
+                                <li>Led Migration of over 10 existing code bases with external handshakes, successfully upgrading from LDAP to LDAPS protocols, improving security and compatibility for Active Directory integrations across the platform.</li>
+                                <li>Managed the frontend development of the JavaScript driven IT portal and integrated with third party services such as Ping and Yammer using REST and SOAP Web APIs.</li>
+                                <li>Implemented multiple reusable widgets that facilitate retrieval of customer and platform data, along with setting up platform wide APIs for consumption in a newly implemented ServiceNow portal using Angular.js, TypeScript and REST.</li>
+                                <li>Contributed to an internal platform team by reviewing potential vulnerabilities, security and system performance while working with senior engineers and architects, refactoring 20+ unused URLs and open internal APIs using Node.js and Mongo DB.</li> 
+                                <li>Implemented a global Trust IT webpage for companywide live critical issue tracking and escalation platform using React.js, Node.js, REST and SQL.</li>
+                                <li>Streamlined manual error handling tasks for application support teams by initiating and developing an automation project, resulting an 18% reduction in manual effort using Python and Selenium.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="experience-timeline-dot"></div>
+                </div>
+                
+                <div class="experience-item animate-on-scroll">
+                    <div class="experience-card">
+                        <div class="experience-role">Software Engineering Intern</div>
+                        <div class="experience-company">Schneider Electric</div>
+                        <div class="experience-duration">Jan 2020 – June 2020</div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Enhanced the User Interface of the IT user portal used by over 80000 end users and introduced the new feedback collection feature and dashboard using JavaScript, Ruby and SQL.</li>
+                                <li>Resulted a 35% increase in company feedback engagement by implementing feature to list and categorize pending and completed feedback for end users' requests, developing a user-friendly interface that organized entries by status and pagination.</li>
+                                <li>Leveraged queries to design visual boards, enabling the extraction of customized real time data from the database to meet end user requirements using SQL and Power BI.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="experience-timeline-dot"></div>
+                </div>
+
+                <div class="experience-item animate-on-scroll">
+                    <div class="experience-card">
+                        <div class="experience-role">Summer Software Engineering Intern</div>
+                        <div class="experience-company">Lava International Limited</div>
+                        <div class="experience-duration">May 2019 - Jul 2019</div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Contributed to Code refactoring and Improvement team by optimizing and eliminating redundant code and functions using C, C++ and assembly machine language, improving throughput by 11%.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="experience-timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="skills">
         <div class="container">
             <h2 class="section-title animate-on-scroll">Skills</h2>
@@ -623,7 +712,7 @@
                     <h3 class="skill-title">Frontend</h3>
                     <ul class="skill-list">
                         <li>HTML5 / CSS3 / SASS</li>
-                        <li>React.js</li>
+                        <li>React.js / Angular.js</li>
                         <li>TypeScript / JavaScript</li>
                         <li>Responsive Design</li>
                     </ul>
@@ -632,9 +721,9 @@
                     <div class="skill-icon">⚙️</div>
                     <h3 class="skill-title">Backend</h3>
                     <ul class="skill-list">
-                        <li>Node.js / Python / Java</li>
-                        <li>Express / Flask / Spring</li>
-                        <li>RESTful APIs / GraphQL</li>
+                        <li>C++ / Python / Java</li>
+                        <li>Express.js / Node.js / Spring</li>
+                        <li>REST APIs / GraphQL</li>
                         <li>Microservices</li>
                     </ul>
                 </div>
@@ -643,8 +732,8 @@
                     <h3 class="skill-title">Database</h3>
                     <ul class="skill-list">
                         <li>MongoDB / PostgreSQL</li>
-                        <li>Redis / Elasticsearch</li>
-                        <li>Database Design</li>
+                        <li>SQL / SQL Server</li>
+                        <li>Robo3T</li>
                         <li>Query Optimization</li>
                     </ul>
                 </div>
@@ -652,9 +741,9 @@
                     <div class="skill-icon">☁️</div>
                     <h3 class="skill-title">DevOps</h3>
                     <ul class="skill-list">
-                        <li>AWS / Azure / GCP</li>
+                        <li>AWS</li>
                         <li>Docker / Kubernetes</li>
-                        <li>CI/CD Pipelines</li>
+                        <li>CI/CD Pipelines / Git</li>
                         <li>Monitoring & Logging</li>
                     </ul>
                 </div>
@@ -667,13 +756,36 @@
             <h2 class="section-title animate-on-scroll">Projects</h2>
             <div class="projects-grid">
                 <div class="project-card animate-on-scroll">
-                    <h3 class="project-title">E-Commerce Platform</h3>
-                    <p class="project-description">A full-featured e-commerce platform with modern UI/UX, payment integration, and admin dashboard. Built for scalability and performance.</p>
+                    <h3 class="project-title">The Toy Store</h3>
+                    <p class="project-description">Engineered a distributed ecommerce microservices system in Python with REST APIs, gRPC communication and Docker containerization.</p>
+                    <p class="project-description">Implemented custom thread pools, concurrent request handling and persistent data storage across frontend & catalog services.</p>
+                    <p class="project-description">Designed fault tolerant distributed architecture featuring LRU caching, leader election protocols, replica management with crash failure recovery and performance optimization under varying client loads, deployed on AWS with comprehensive load testing.</p>                    
                     <div class="tech-stack">
-                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">REST</span>
+                        <span class="tech-tag">gRPC</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll">
+                    <h3 class="project-title">Patient Tracker App</h3>
+                    <p class="project-description">Designed a patient information and appointment tracker app using React.js and components, offering personalized login and individual doctor and patient views.</p>
+                    <p class="project-description">Built scalable backend system leveraging Java, Spring Boot and PostgreSQL building secure JWT auth, designing REST APIs and database management with CRUD operations and transaction handling.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Spring</span>
+                        <span class="tech-tag">Postgres</span>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll">
+                    <h3 class="project-title">Chat Web App</h3>
+                    <p class="project-description">Developed an intuitive real time web chat application using Node.js as the backend renderer, implementing bidirectional messaging functionality with responsive user interface and message synchronization across connected clients.</p>
+                    <p class="project-description">Implemented real time communication using Socket.io WebSocket capability, building interactive chatrooms with multi user support and message broadcasting capabilities to enhance overall user experience and engagement.</p>                    
+                    <div class="tech-stack">
                         <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Stripe</span>
+                        <span class="tech-tag">Socket.io</span>
+                        <span class="tech-tag">JavaScript</span>
                     </div>
                 </div>
             </div>
@@ -686,17 +798,25 @@
                 <h2 class="section-title">Let's Work Together</h2>
                 <p>I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!</p>
                 <div class="contact-links">
-                    <a href="mailto:alex@example.com" class="contact-link">
+                    <a href="" class="contact-link" onclick="copyEmail(event)">
                         📧 Email
-                    </a>
-                    <a href="https://linkedin.com/in/alexchen" class="contact-link">
+                    </a>                    
+                    <script>
+                    function copyEmail(event) {
+                        event.preventDefault();
+                        const email = 'pranoydev98@gmail.com';
+                        navigator.clipboard.writeText(email).then(() => {
+                            alert('Email copied to clipboard !!');
+                        }).catch(err => {
+                            console.error('Failed to copy email: ', err);
+                        });
+                    }
+                    </script>
+                    <a href="https://linkedin.com/in/pranoydev" target="_blank" class="contact-link">
                         💼 LinkedIn
                     </a>
-                    <a href="https://github.com/alexchen" class="contact-link">
-                        🐙 GitHub
-                    </a>
-                    <a href="https://twitter.com/alexchen" class="contact-link">
-                        🐦 Twitter
+                    <a href="https://drive.google.com/drive/folders/15YRRKr2gdsb016MVZLeMThrW7ILD_GLM?usp=sharing" target="_blank" class="contact-link">
+                        📄 Resume
                     </a>
                 </div>
             </div>

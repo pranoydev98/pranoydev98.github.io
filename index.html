@@ -812,6 +812,18 @@
                     <a href="https://github.com/pranoydev98/Inventory-Management-System" target="_blank" class="project-link">View on GitHub</a>
                 </div>
                 <div class="project-card animate-on-scroll">
+                    <h3 class="project-title">Custom Pub Sub Message Broker</h3>
+                    <p class="project-description">Implemented a high throughput message broker in C++ using lock-free queues with atomic CAS operations and a thread worker pool, sustaining significant msgs/sec across multiple concurrent publishers with zero mutex contention.</p>
+                    <p class="project-description">Architected a templated Broker API with an STL backed topic registry, custom iterator for dead subscriber cleanup and a slab memory pool using unique_ptr custom deleters, reducing heap allocations under varying load.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Threadpool</span>
+                        <span class="tech-tag">Registry</span>
+                        <span class="tech-tag">Atomic CAS</span>
+                    </div>
+                    <a href="https://github.com/pranoydev98/Custom-Pub-Sub-Message-broker" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+                <div class="project-card animate-on-scroll">
                     <h3 class="project-title">Web Real Time Chat Application</h3>
                     <p class="project-description">Developed a full stack real time chat application using Express.js, React and Socket.io web socket technology, featuring JWT authentication, online user status tracking, profile picture update and global state management using Zustand.</p>
                     <p class="project-description">Implemented a responsive and intuitive UI with Tailwind CSS and Daisy UI for seamless message and image sharing with synchronization across all connected clients.</p>
@@ -839,7 +851,7 @@
                     <script>
                     function copyEmail(event) {
                         event.preventDefault();
-                        const email = 'pranoydev98@gmail.com';
+                        const email = 'pranoydev18@gmail.com';
                         navigator.clipboard.writeText(email).then(() => {
                             alert('Email copied to clipboard !!');
                         }).catch(err => {
